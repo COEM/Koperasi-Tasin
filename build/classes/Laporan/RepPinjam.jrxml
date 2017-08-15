@@ -1,43 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="750" pageHeight="595" orientation="Landscape" columnWidth="710" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2e7e5743-617d-419a-925e-99771c521f8e">
 	<property name="ireport.zoom" value="1.5"/>
-	<property name="ireport.x" value="85"/>
+	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="bln" class="java.lang.Integer"/>
 	<parameter name="thn" class="java.lang.Integer"/>
 	<queryString>
 		<![CDATA[SELECT
+     anggota.`Nama` AS anggota_Nama,
+     anggota.`Alamat` AS anggota_Alamat,
+     anggota.`Tgl_Masuk` AS anggota_Tgl_Masuk,
      pinjaman.`NoPinjam` AS pinjaman_NoPinjam,
-     pinjaman.`TglPinjam` AS pinjaman_TglPinjam,
      pinjaman.`NoAnggota` AS pinjaman_NoAnggota,
      pinjaman.`Lama` AS pinjaman_Lama,
      pinjaman.`Bunga` AS pinjaman_Bunga,
      pinjaman.`Jumlah` AS pinjaman_Jumlah,
      pinjaman.`Angsuran` AS pinjaman_Angsuran,
-     pinjaman.`total_angsuran` AS pinjaman_total_angsuran,
-     pinjaman.`sisa` AS pinjaman_sisa,
-     anggota.`Nama` AS anggota_Nama,
-     anggota.`Alamat` AS anggota_Alamat,
-     anggota.`Tgl_Masuk` AS anggota_Tgl_Masuk,
-     (pinjaman.`Jumlah`+pinjaman.`Bunga`) AS total
+     pinjaman.`Sisa` AS pinjaman_Sisa,
+     pinjaman.`TglPinjam` AS pinjaman_TglPinjam
 FROM
      `anggota` anggota RIGHT OUTER JOIN `pinjaman` pinjaman ON anggota.`NoAnggota` = pinjaman.`NoAnggota`
-where
+
+WHERE
      month(pinjaman.`TglPinjam`) = $P{bln}
- AND year(pinjaman.`TglPinjam`) = $P{thn}]]>
+ AND year(pinjaman.`TglPinjam`) = $P{thn}
+order by convert(right(NoPinjam,length(NoPinjam)-2), decimal)]]>
 	</queryString>
+	<field name="anggota_Nama" class="java.lang.String"/>
+	<field name="anggota_Alamat" class="java.lang.String"/>
+	<field name="anggota_Tgl_Masuk" class="java.sql.Date"/>
 	<field name="pinjaman_NoPinjam" class="java.lang.String"/>
-	<field name="pinjaman_TglPinjam" class="java.sql.Date"/>
 	<field name="pinjaman_NoAnggota" class="java.lang.String"/>
 	<field name="pinjaman_Lama" class="java.lang.String"/>
 	<field name="pinjaman_Bunga" class="java.lang.String"/>
 	<field name="pinjaman_Jumlah" class="java.lang.String"/>
 	<field name="pinjaman_Angsuran" class="java.lang.String"/>
-	<field name="pinjaman_sisa" class="java.lang.String"/>
-	<field name="anggota_Nama" class="java.lang.String"/>
-	<field name="anggota_Alamat" class="java.lang.String"/>
-	<field name="anggota_Tgl_Masuk" class="java.sql.Date"/>
-	<field name="total" class="java.lang.Double"/>
+	<field name="pinjaman_Sisa" class="java.lang.String"/>
+	<field name="pinjaman_TglPinjam" class="java.sql.Date"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>

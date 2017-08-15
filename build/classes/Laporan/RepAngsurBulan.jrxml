@@ -1,58 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="00e1a08d-c181-4cbb-a29e-65fd214516f6">
 	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="183"/>
+	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="bln" class="java.lang.Integer"/>
 	<parameter name="thn" class="java.lang.Integer"/>
 	<queryString>
 		<![CDATA[SELECT
-     angsuran.`NoBukti` AS angsuran_NoBukti,
-     angsuran.`TglBukti` AS angsuran_TglBukti,
-     angsuran.`NoPinjam` AS angsuran_NoPinjam,
-     angsuran.`Jml_angs` AS angsuran_Jml_angs,
-     angsuran.`ke` AS angsuran_ke,
      anggota.`Nama` AS anggota_Nama,
      anggota.`Alamat` AS anggota_Alamat,
      anggota.`Tgl_Masuk` AS anggota_Tgl_Masuk,
-     anggota.`simp` AS anggota_simp,
-     anggota.`tempat_lahir` AS anggota_tempat_lahir,
-     anggota.`tglLahir` AS anggota_tglLahir,
-     anggota.`status_pegawai` AS anggota_status_pegawai,
-     pinjaman.`TglPinjam` AS pinjaman_TglPinjam,
+     anggota.`TglLahir` AS anggota_TglLahir,
+     angsuran.`NoBukti` AS angsuran_NoBukti,
+     angsuran.`TglBukti` AS angsuran_TglBukti,
+     angsuran.`NoPinjam` AS angsuran_NoPinjam,
+     angsuran.`Ke` AS angsuran_Ke,
+     pinjaman.`NoPinjam` AS pinjaman_NoPinjam,
      pinjaman.`NoAnggota` AS pinjaman_NoAnggota,
      pinjaman.`Lama` AS pinjaman_Lama,
      pinjaman.`Bunga` AS pinjaman_Bunga,
      pinjaman.`Jumlah` AS pinjaman_Jumlah,
      pinjaman.`Angsuran` AS pinjaman_Angsuran,
-     pinjaman.`total_angsuran` AS pinjaman_total_angsuran,
-     pinjaman.`sisa` AS pinjaman_sisa,
-     pinjaman.`NoPinjam` AS pinjaman_NoPinjam
+     pinjaman.`TglPinjam` AS pinjaman_TglPinjam,
+     angsuran.`Total_Angsuran` AS angsuran_Total_Angsuran,
+     angsuran.`Sisa` AS angsuran_Sisa
 FROM
      `pinjaman` pinjaman RIGHT OUTER JOIN `angsuran` angsuran ON pinjaman.`NoPinjam` = angsuran.`NoPinjam`
-     LEFT OUTER JOIN `anggota` anggota ON pinjaman.`NoAnggota` = anggota.`NoAnggota`]]>
+     LEFT OUTER JOIN `anggota` anggota ON pinjaman.`NoAnggota` = anggota.`NoAnggota`
+where
+     month(angsuran.`TglBukti`) = $P{bln}
+ AND year(angsuran.`TglBukti`) = $P{thn}
+order by convert(right(nobukti,length(nobukti)-2), decimal)]]>
 	</queryString>
-	<field name="angsuran_NoBukti" class="java.lang.String"/>
-	<field name="angsuran_TglBukti" class="java.sql.Date"/>
-	<field name="angsuran_NoPinjam" class="java.lang.String"/>
-	<field name="angsuran_Jml_angs" class="java.lang.String"/>
-	<field name="angsuran_ke" class="java.lang.String"/>
 	<field name="anggota_Nama" class="java.lang.String"/>
 	<field name="anggota_Alamat" class="java.lang.String"/>
 	<field name="anggota_Tgl_Masuk" class="java.sql.Date"/>
-	<field name="anggota_simp" class="java.lang.String"/>
-	<field name="anggota_tempat_lahir" class="java.lang.String"/>
-	<field name="anggota_tglLahir" class="java.sql.Date"/>
-	<field name="anggota_status_pegawai" class="java.lang.String"/>
-	<field name="pinjaman_TglPinjam" class="java.sql.Date"/>
+	<field name="anggota_TglLahir" class="java.sql.Date"/>
+	<field name="angsuran_NoBukti" class="java.lang.String"/>
+	<field name="angsuran_TglBukti" class="java.sql.Date"/>
+	<field name="angsuran_NoPinjam" class="java.lang.String"/>
+	<field name="angsuran_Ke" class="java.lang.Integer"/>
+	<field name="pinjaman_NoPinjam" class="java.lang.String"/>
 	<field name="pinjaman_NoAnggota" class="java.lang.String"/>
 	<field name="pinjaman_Lama" class="java.lang.String"/>
 	<field name="pinjaman_Bunga" class="java.lang.String"/>
 	<field name="pinjaman_Jumlah" class="java.lang.String"/>
 	<field name="pinjaman_Angsuran" class="java.lang.String"/>
-	<field name="pinjaman_total_angsuran" class="java.lang.String"/>
-	<field name="pinjaman_sisa" class="java.lang.String"/>
-	<field name="pinjaman_NoPinjam" class="java.lang.String"/>
+	<field name="pinjaman_TglPinjam" class="java.sql.Date"/>
+	<field name="angsuran_Total_Angsuran" class="java.lang.Integer"/>
+	<field name="angsuran_Sisa" class="java.lang.Integer"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -164,11 +160,11 @@ FROM
 			</textField>
 			<textField pattern="¤ #,##0">
 				<reportElement x="532" y="0" width="133" height="20" uuid="5ab10e84-81ef-4cba-b145-cd7c84944a68"/>
-				<textFieldExpression><![CDATA[$F{pinjaman_total_angsuran}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{angsuran_Total_Angsuran}]]></textFieldExpression>
 			</textField>
 			<textField pattern="¤ #,##0">
 				<reportElement x="665" y="0" width="133" height="20" uuid="fe9fa967-51f2-49d3-b394-6f4b8ce76b98"/>
-				<textFieldExpression><![CDATA[$F{pinjaman_sisa}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{angsuran_Sisa}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
