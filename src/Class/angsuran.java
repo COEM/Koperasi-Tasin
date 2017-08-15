@@ -19,7 +19,7 @@ public class angsuran {
     public String noBukti,noPinjam;
     public Date tglBukti;
     public Integer jasa,angsuran,totalAngsuran,sisa,ke;
-    
+    //komentar
     public void tambah(){
         try {
             Connection c=ClassDatabase.getkoneksi();

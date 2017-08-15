@@ -107,10 +107,14 @@ public class pinjaman {
         return data;
     }
     
+    public void test(){
+        System.out.println("test");
+    }
+    
     
     
     public static void main(String[] args) {
         pinjaman pinjam = new pinjaman();
-        System.out.println(pinjam.jasa(pinjam.sisaPinjaman("PJ7")));
+        pinjam.test();
     }
 }
