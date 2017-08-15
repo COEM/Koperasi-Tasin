@@ -19,6 +19,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
@@ -833,12 +834,20 @@ private void SimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:
         // TODO add your handling code here
         TxtNoBukti.setText(Tabel4.getValueAt(Tabel4.getSelectedRow(), 0).toString());
         //TxtWajib.setText(Tabel2.getValueAt(Tabel2.getSelectedRow(), 3).toString());
+//         TxtTanggalAngsur.setDate(getTanggalFromTable(Tabel4, 1));
     }//GEN-LAST:event_Tabel4MouseClicked
 
     private void Tabel4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tabel4MousePressed
         // TODO add your handling code here:
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
          if(evt.getClickCount()==1){
-            TxtTanggalAngsur.setDate(getTanggalFromTable(Tabel4, 1));
+//            TxtTanggalAngsur.setDate(getTanggalFromTable(Tabel4, 1));
+             try {
+                 Date date = formatter.parse(Tabel4.getValueAt(Tabel4.getSelectedRow(), 1).toString());
+                 TxtTanggalAngsur.setDate(date);
+             } catch (Exception e) {
+             }
+//            Tabel4.getValueAt(Tabel4.getSelectedRow(), 0).toString()
         }
     }//GEN-LAST:event_Tabel4MousePressed
 
@@ -865,7 +874,7 @@ private void SimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:
 
 try{
 Statement statement =(Statement)ClassDatabase.getkoneksi().createStatement();
-ResultSet rs = statement.executeQuery("select * from angsuran where NoPinjam like '%"+pencarian.getText()+"%'");
+ResultSet rs = statement.executeQuery("select * from angsuran where NoPinjam like '%"+pencarian.getText()+"%' order by convert(right(nobukti,length(nobukti)-2), decimal) DESC");
    while (rs.next()) {
      tab.addRow(new Object[]{
      rs.getString(1),
