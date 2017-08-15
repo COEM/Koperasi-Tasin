@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="13151075-9e51-470c-8c6d-b56c301d3496">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="NoAnggota" class="java.lang.String"/>
+	<parameter name="NamaAnggota" class="java.lang.String"/>
+	<parameter name="TanggalMasuk" class="java.util.Date"/>
+	<queryString>
+		<![CDATA[SELECT
+     (simpanan.`Sukarela`+simpanan.`Wajib`) AS total,
+     simpanan.`NoTrans` AS simpanan_NoTrans,
+     simpanan.`TglTrans` AS simpanan_TglTrans,
+     simpanan.`NoAnggota` AS simpanan_NoAnggota,
+     simpanan.`Wajib` AS simpanan_Wajib,
+     simpanan.`Sukarela` AS simpanan_Sukarela,
+     simpanan.`TotalSimpanan` AS simpanan_TotalSimpanan
+FROM
+     `simpanan` simpanan
+WHERE
+     simpanan.`NoAnggota` = $P{NoAnggota}]]>
+	</queryString>
+	<field name="total" class="java.lang.Double"/>
+	<field name="simpanan_NoTrans" class="java.lang.String"/>
+	<field name="simpanan_TglTrans" class="java.sql.Date"/>
+	<field name="simpanan_NoAnggota" class="java.lang.String"/>
+	<field name="simpanan_Wajib" class="java.lang.String"/>
+	<field name="simpanan_Sukarela" class="java.lang.String"/>
+	<field name="simpanan_TotalSimpanan" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="190" y="0" width="168" height="21" uuid="273a4908-a130-4815-8d65-75ae4327f857"/>
+				<textElement>
+					<font size="14" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[LAPORAN SIMPANAN PERANGGOTA]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="95" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="10" width="68" height="18" uuid="aae4a9fa-f268-44b3-a6be-2366ea26e3b9"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No. Anggota]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="39" width="80" height="18" uuid="743eefd2-39e0-4322-8fc1-8f4f9580e5ef"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama Anggota]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="312" y="10" width="90" height="18" uuid="efef284b-c1fc-4d8c-bda6-5bd0acac0c90"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tanggal Masuk]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="412" y="10" width="100" height="20" uuid="90b1cc7b-5b1a-43a8-b5ed-e5b44237fca1"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{TanggalMasuk}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="10" width="100" height="18" uuid="864ca96c-a964-49d5-93d7-68a7bddf4483"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{NoAnggota}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="39" width="189" height="18" uuid="0d9c4287-b4ef-4b2f-b501-b87606d29fff"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{NamaAnggota}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="1" y="0" width="554" height="20" uuid="46348625-c79c-46b0-9077-f644115ec1b1"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="10" y="0" width="90" height="20" uuid="545a89f5-c13b-4f5e-b744-b1ac7acca4b3"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No. Simpan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="111" y="0" width="100" height="20" uuid="c398d8af-57b2-4ae8-8d1f-e1bea952aa8f"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tanggal Simpan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="223" y="0" width="100" height="20" uuid="2ec40926-186c-40a7-984d-9c0bddda5149"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Wajib]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="336" y="0" width="100" height="20" uuid="bd6b0f3f-2cd3-4273-8c2d-f882655f9159"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sukarela]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="448" y="0" width="100" height="20" uuid="8997b433-302d-465d-bab8-54abc02606e0"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<line>
+				<reportElement x="105" y="0" width="1" height="20" uuid="7aea150c-cc6d-43ea-b633-2ab323a736ef"/>
+			</line>
+			<line>
+				<reportElement x="216" y="0" width="1" height="20" uuid="ef06c3a4-2ae9-405b-8ef6-5ba212fd2347"/>
+			</line>
+			<line>
+				<reportElement x="328" y="0" width="1" height="20" uuid="0ab400c9-abfa-4c5f-aa25-54e4bcf18b15"/>
+			</line>
+			<line>
+				<reportElement x="441" y="0" width="1" height="20" uuid="b3affa3f-d646-43e8-8133-fe754b544dba"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="1" y="0" width="554" height="20" uuid="2602091b-ebc9-40aa-a3d4-9782b89cefa1"/>
+			</rectangle>
+			<textField>
+				<reportElement x="10" y="0" width="90" height="20" uuid="652f9998-8e8d-43ce-98ad-502a2d9757af"/>
+				<textFieldExpression><![CDATA[$F{simpanan_NoTrans}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="111" y="0" width="100" height="20" uuid="07e87a16-99fa-4640-a3a5-da0e5e85c534"/>
+				<textFieldExpression><![CDATA[$F{simpanan_TglTrans}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0">
+				<reportElement x="223" y="0" width="100" height="20" uuid="4de0f881-cca3-4357-8feb-17852718041f"/>
+				<textFieldExpression><![CDATA[$F{simpanan_Wajib}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0">
+				<reportElement x="336" y="0" width="100" height="20" uuid="d0add772-c078-4073-bf59-d4c7573d1da1"/>
+				<textFieldExpression><![CDATA[$F{simpanan_Sukarela}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0">
+				<reportElement x="448" y="0" width="100" height="20" uuid="890e5d80-eab3-4a40-8f13-a96a1fbc6301"/>
+				<textFieldExpression><![CDATA[$F{simpanan_TotalSimpanan}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="441" y="0" width="1" height="20" uuid="71eac95d-ea7e-4fee-b3db-3f989686bf55"/>
+			</line>
+			<line>
+				<reportElement x="328" y="0" width="1" height="20" uuid="abce6ca3-2df6-425d-9fc3-3319ffab91e1"/>
+			</line>
+			<line>
+				<reportElement x="216" y="0" width="1" height="20" uuid="a15a7b12-fd2a-443f-81e1-dd7b317c8f0d"/>
+			</line>
+			<line>
+				<reportElement x="105" y="0" width="1" height="20" uuid="00b73181-501a-4c60-b237-ad5a2a20e0dd"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="6" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="3" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="71" splitType="Stretch">
+			<staticText>
+				<reportElement x="441" y="14" width="56" height="20" uuid="c3ea257e-4ee1-4f5c-8e74-77ce604d0a9b"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pimpinan]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
