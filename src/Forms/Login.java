@@ -175,11 +175,14 @@ private String tanggal = smpdtfmt.format(tglsekarang);
         jLabel6.setText("LOGIN");
         jLabel6.setName("jLabel6"); // NOI18N
 
-        vusername.setText("admin");
         vusername.setName("vusername"); // NOI18N
 
-        vpassword.setText("12345");
         vpassword.setName("vpassword"); // NOI18N
+        vpassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                vpasswordActionPerformed(evt);
+            }
+        });
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton1.setText("Login");
@@ -589,7 +592,7 @@ try {
             if (result.next()) {
                 if (vpassword.getText().equals(result.getString("password"))) {
                     
-//                JOptionPane.showMessageDialog(rootPane, "Berhasil Login");
+             JOptionPane.showMessageDialog(rootPane, "Berhasil Login");
                 new MainMenu().setVisible(true);
                 
                 dispose();
@@ -628,6 +631,10 @@ try {
         jMenu4.setVisible(false);
         jMenu5.setVisible(false);
     }//GEN-LAST:event_formWindowActivated
+
+    private void vpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vpasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_vpasswordActionPerformed
 
     /**
      * @param args the command line arguments

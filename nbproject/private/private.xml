@@ -5,8 +5,13 @@
         <group>
             <file>file:/D:/tasin/Semester5/TA/Aplikasi%20TA/src/Forms/FrmSimpanan.java</file>
             <file>file:/D:/tasin/Semester5/TA/Aplikasi%20TA/src/Forms/FrmAngsuran.java</file>
+            <file>file:/D:/tasin/Semester5/TA/Aplikasi%20TA/src/Class/ClassDatabase.java</file>
+            <file>file:/D:/tasin/Semester5/TA/Aplikasi%20TA/src/Laporan/RepAngsurBulan.jrxml</file>
             <file>file:/D:/tasin/Semester5/TA/Aplikasi%20TA/src/Forms/MainMenu.java</file>
             <file>file:/D:/tasin/Semester5/TA/Aplikasi%20TA/src/Forms/FrmPinjaman.java</file>
+            <file>file:/D:/tasin/Semester5/TA/Aplikasi%20TA/src/Class/angsuran.java</file>
+            <file>file:/D:/tasin/Semester5/TA/Aplikasi%20TA/src/Class/pinjaman.java</file>
+            <file>file:/D:/tasin/Semester5/TA/Aplikasi%20TA/src/Forms/Login.java</file>
             <file>file:/D:/tasin/Semester5/TA/Aplikasi%20TA/src/Forms/FrmAnggota.java</file>
         </group>
     </open-files>
