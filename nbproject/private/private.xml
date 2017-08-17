@@ -3,16 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/tasin/Semester5/TA/Aplikasi%20TA/src/Forms/FrmSimpanan.java</file>
             <file>file:/D:/tasin/Semester5/TA/Aplikasi%20TA/src/Forms/FrmAngsuran.java</file>
-            <file>file:/D:/tasin/Semester5/TA/Aplikasi%20TA/src/Class/ClassDatabase.java</file>
-            <file>file:/D:/tasin/Semester5/TA/Aplikasi%20TA/src/Laporan/RepAngsurBulan.jrxml</file>
             <file>file:/D:/tasin/Semester5/TA/Aplikasi%20TA/src/Forms/MainMenu.java</file>
-            <file>file:/D:/tasin/Semester5/TA/Aplikasi%20TA/src/Forms/FrmPinjaman.java</file>
-            <file>file:/D:/tasin/Semester5/TA/Aplikasi%20TA/src/Class/angsuran.java</file>
             <file>file:/D:/tasin/Semester5/TA/Aplikasi%20TA/src/Class/pinjaman.java</file>
             <file>file:/D:/tasin/Semester5/TA/Aplikasi%20TA/src/Forms/Login.java</file>
+            <file>file:/D:/tasin/Semester5/TA/Aplikasi%20TA/src/Forms/FrmSimpanan.java</file>
+            <file>file:/D:/tasin/Semester5/TA/Aplikasi%20TA/src/Laporan/RepAngsuranAnggota.jrxml</file>
+            <file>file:/D:/tasin/Semester5/TA/Aplikasi%20TA/src/Class/ClassDatabase.java</file>
+            <file>file:/D:/tasin/Semester5/TA/Aplikasi%20TA/src/Laporan/RepAnggota.jrxml</file>
+            <file>file:/D:/tasin/Semester5/TA/Aplikasi%20TA/src/Laporan/RepAngsurBulan.jrxml</file>
+            <file>file:/D:/tasin/Semester5/TA/Aplikasi%20TA/src/Forms/FrmPinjaman.java</file>
+            <file>file:/D:/tasin/Semester5/TA/Aplikasi%20TA/src/Laporan/RepPinjam.jrxml</file>
+            <file>file:/D:/tasin/Semester5/TA/Aplikasi%20TA/src/Class/angsuran.java</file>
+            <file>file:/D:/tasin/Semester5/TA/Aplikasi%20TA/src/Laporan/RepAnggota.txt</file>
             <file>file:/D:/tasin/Semester5/TA/Aplikasi%20TA/src/Forms/FrmAnggota.java</file>
+            <file>file:/D:/tasin/Semester5/TA/Aplikasi%20TA/src/Laporan/FrmRepSimpanAnggota.jrxml</file>
         </group>
     </open-files>
 </project-private>

@@ -587,6 +587,7 @@ private void TxtTempatLahirCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-
             TxtTgl.setDate(getTanggalFromTable(Tabel1, 3));
             TxtTglLahir.setDate(getTanggalFromTable(Tabel1, 6));      
         }
+        
     }//GEN-LAST:event_Tabel1MousePressed
 
     private void pencarianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pencarianActionPerformed

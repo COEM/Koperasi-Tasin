@@ -153,11 +153,7 @@ private void loadcombodata(){
         TxtTanggalAngsur = new com.toedter.calendar.JDateChooser();
         jScrollPane2 = new javax.swing.JScrollPane();
         Tabel4 = new javax.swing.JTable();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        coba = new javax.swing.JTextField();
+        TxtAngsuranKe = new javax.swing.JTextField();
         txtNo_anggota = new javax.swing.JTextField();
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -179,6 +175,13 @@ private void loadcombodata(){
 
         setBackground(new java.awt.Color(0, 51, 102));
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
+            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+                formInternalFrameActivated(evt);
+            }
+            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
+            }
             public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
             }
             public void internalFrameDeiconified(javax.swing.event.InternalFrameEvent evt) {
@@ -186,13 +189,6 @@ private void loadcombodata(){
             public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
             }
             public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
-            }
-            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
-                formInternalFrameActivated(evt);
-            }
-            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
-            }
-            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
             }
         });
 
@@ -226,7 +222,7 @@ private void loadcombodata(){
         jLabel5.setName("jLabel5"); // NOI18N
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel8.setText("No Bukti");
+        jLabel8.setText("Kode Bukti");
         jLabel8.setName("jLabel8"); // NOI18N
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -383,15 +379,7 @@ private void loadcombodata(){
         });
         jScrollPane2.setViewportView(Tabel4);
 
-        jTextField1.setName("jTextField1"); // NOI18N
-
-        jTextField2.setName("jTextField2"); // NOI18N
-
-        jTextField3.setName("jTextField3"); // NOI18N
-
-        jTextField4.setName("jTextField4"); // NOI18N
-
-        coba.setName("coba"); // NOI18N
+        TxtAngsuranKe.setName("TxtAngsuranKe"); // NOI18N
 
         txtNo_anggota.setName("txtNo_anggota"); // NOI18N
 
@@ -458,7 +446,7 @@ private void loadcombodata(){
                             .addComponent(TxtTotalBayar, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
                             .addComponent(TxtSisa, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
                             .addComponent(TxtTanggalAngsur, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(coba))))
+                            .addComponent(TxtAngsuranKe))))
                 .addGap(59, 59, 59))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -479,21 +467,10 @@ private void loadcombodata(){
                         .addGap(0, 11, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(pencarian, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 6, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE)))))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pencarian, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -503,25 +480,15 @@ private void loadcombodata(){
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+                                .addGap(22, 22, 22)
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(28, 28, 28)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(pencarian, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(22, 22, 22)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(31, 31, 31))
-                                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                                    .addComponent(pencarian, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(2, 2, 2)
@@ -563,7 +530,7 @@ private void loadcombodata(){
                         .addGap(13, 13, 13)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(coba, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(TxtAngsuranKe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(TxtTotalBayar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -627,7 +594,7 @@ private void tampilData(ResultSet data){
         TxtTotalPinjam.setText(data.getString("jumlah"));
         
 //        TxtJasa.setText(String.valueOf(pinjam.sisaPinjaman(data.getString("NoPinjam"))));
-        coba.setText(String.valueOf(pinjam.AngsurKe(data.getString("NoPinjam"))));
+        TxtAngsuranKe.setText(String.valueOf(pinjam.AngsurKe(data.getString("NoPinjam"))));
         TxtSisa.setText(String.valueOf(pinjam.sisaPinjaman(data.getString("NoPinjam"))));
         TxtJasa.setText(String.valueOf(pinjam.jasa(pinjam.sisaPinjaman(data.getString("NoPinjam")))));
         TxtTotalBayar.setText(String.valueOf((data.getInt("jumlah") / data.getInt("lama")) + pinjam.jasa(pinjam.sisaPinjaman("PJ7"))));
@@ -637,75 +604,75 @@ private void tampilData(ResultSet data){
 
 
 
-private void tes2(String bla){
-    try {
-       
-            String kd=bla;
-            Connection c = ClassDatabase.getkoneksi();
-            Statement s = c.createStatement();           
-//            String sql = "Select * from pinjaman WHERE NoPinjam=?" ;
-            String sql = "Select pinjaman.NoPinjam, pinjaman.NoAnggota, pinjaman.Lama, pinjaman.Bunga, pinjaman.Jumlah, pinjaman.Jasa, pinjaman.Angsuran, pinjaman.Sisa, pinjaman.TglPinjam, angsuran.NoBukti, angsuran.TglBukti, angsuran.NoPinjam, angsuran.Jasa, angsuran.Angsuran, angsuran.Total_Angsuran, angsuran.Sisa, angsuran.Ke from pinjaman LEFT JOIN angsuran ON pinjaman.NoPinjam=angsuran.NoPinjam WHERE pinjaman.NoPinjam=? ORDER BY `Ke` DESC ";
-//            String sql = "Select * from pinjaman LEFT JOIN angsuran ON pinjaman.NoPinjam=angsuran.NoPinjam WHERE pinjaman.NoPinjam=? ORDER BY `NoAnggota`";
-            PreparedStatement p=(PreparedStatement) c.prepareStatement(sql);
-            p.setString(1, kd);
-            ResultSet result=p.executeQuery();
-            result.next();
-//            double we = Double.parseDouble(result.getString("Sisa"));
-//            double we1 = (we * 0.06);
-//            double wa =  Double.parseDouble(result.getString("Sisa")) - Double.parseDouble(result.getString("Angsuran"));
-//            double wa1 = we1 + Double.parseDouble(result.getString("Angsuran"));
-//            int qwe = 1;
-//            Integer jasa =  Integer.parseInt(result.getString("Bunga")) / 100 * Integer.parseInt(result.getString("Sisa")) ;
-//           Double jasa =  4/4;
-            Integer tes = Integer.parseInt(result.getString("Sisa"));
-            String percobaan = "default";
-            if (tes == 0) {
-                    percobaan = "tes ini";
-        }else{
-                percobaan = "ade isi nye";
-            }
-            Double jasa=Double.parseDouble(result.getString("Bunga"))/100*Double.parseDouble(result.getString("Sisa"));
-            Double totalangsuran=Double.parseDouble(result.getString("Jasa"))+Double.parseDouble(result.getString("Angsuran"));
-            Double sisa=Double.parseDouble(result.getString("Jumlah"))-Double.parseDouble(result.getString("Angsuran"));            
-            String KE = result.getString("Ke");
-           int qwe = 1 + BasisLibrary.stringToInt(KE);
-           this.TxtTgl.setDate(result.getDate("TglPinjam"));
-//           this.TxtNoAnggota.setSelectedItem(result.getString("NoAnggota"));
-           this.TxtLamaPinjam.setText(result.getString("Lama"));
-           this.TxtTotalPinjam.setText(result.getString("Jumlah"));
-           this.TxtAngsuran.setText(result.getString("pinjaman.Angsuran"));
-//           this.TxtJasa.setText(Double.toString(we1));
-           this.TxtJasa.setText(String.valueOf(jasa));
-//           this.TxtJasa.setText(percobaan);
-
-//           this.TxtTotalBayar.setText(Double.toString(wa1));
-           this.TxtTotalBayar.setText(String.valueOf(totalangsuran));
-           this.TxtSisa.setText(String.valueOf(sisa));
-//           this.coba.setText(asdf);
-//            this.TxtAngsuranKe.removeAllItems();
-            if (qwe == 0) {
-                qwe = 1;
-            }else if(qwe == 2){
-                qwe=2;
-            }
-            this.coba.setText(Integer.toString(qwe));
-//            this.coba.setText(apk);
-
-       
-//           int pk=Integer.parseInt(result.getString("Lama"));
-//           
-//                   for(int i2=1; i2<=pk; i2++)
-//                    {
-//                        this.TxtAngsuranKe.addItem(String.valueOf(i2));
-//                    }
-                   
-                          
-
-            }catch(SQLException e){
-            System.out.println(e);        
-         }
+//private void tes2(String bla){
+//    try {
+//       
+//            String kd=bla;
+//            Connection c = ClassDatabase.getkoneksi();
+//            Statement s = c.createStatement();           
+////            String sql = "Select * from pinjaman WHERE NoPinjam=?" ;
+//            String sql = "Select pinjaman.NoPinjam, pinjaman.NoAnggota, pinjaman.Lama, pinjaman.Bunga, pinjaman.Jumlah, pinjaman.Jasa, pinjaman.Angsuran, pinjaman.Sisa, pinjaman.TglPinjam, angsuran.NoBukti, angsuran.TglBukti, angsuran.NoPinjam, angsuran.Jasa, angsuran.Angsuran, angsuran.Total_Angsuran, angsuran.Sisa, angsuran.Ke from pinjaman LEFT JOIN angsuran ON pinjaman.NoPinjam=angsuran.NoPinjam WHERE pinjaman.NoPinjam=? ORDER BY `Ke` DESC ";
+////            String sql = "Select * from pinjaman LEFT JOIN angsuran ON pinjaman.NoPinjam=angsuran.NoPinjam WHERE pinjaman.NoPinjam=? ORDER BY `NoAnggota`";
+//            PreparedStatement p=(PreparedStatement) c.prepareStatement(sql);
+//            p.setString(1, kd);
+//            ResultSet result=p.executeQuery();
+//            result.next();
+////            double we = Double.parseDouble(result.getString("Sisa"));
+////            double we1 = (we * 0.06);
+////            double wa =  Double.parseDouble(result.getString("Sisa")) - Double.parseDouble(result.getString("Angsuran"));
+////            double wa1 = we1 + Double.parseDouble(result.getString("Angsuran"));
+////            int qwe = 1;
+////            Integer jasa =  Integer.parseInt(result.getString("Bunga")) / 100 * Integer.parseInt(result.getString("Sisa")) ;
+////           Double jasa =  4/4;
+//            Integer tes = Integer.parseInt(result.getString("Sisa"));
+//            String percobaan = "default";
+//            if (tes == 0) {
+//                    percobaan = "tes ini";
+//        }else{
+//                percobaan = "ade isi nye";
+//            }
+//            Double jasa=Double.parseDouble(result.getString("Bunga"))/100*Double.parseDouble(result.getString("Sisa"));
+//            Double totalangsuran=Double.parseDouble(result.getString("Jasa"))+Double.parseDouble(result.getString("Angsuran"));
+//            Double sisa=Double.parseDouble(result.getString("Jumlah"))-Double.parseDouble(result.getString("Angsuran"));            
+//            String KE = result.getString("Ke");
+//           int qwe = 1 + BasisLibrary.stringToInt(KE);
+//           this.TxtTgl.setDate(result.getDate("TglPinjam"));
+////           this.TxtNoAnggota.setSelectedItem(result.getString("NoAnggota"));
+//           this.TxtLamaPinjam.setText(result.getString("Lama"));
+//           this.TxtTotalPinjam.setText(result.getString("Jumlah"));
+//           this.TxtAngsuran.setText(result.getString("pinjaman.Angsuran"));
+////           this.TxtJasa.setText(Double.toString(we1));
+//           this.TxtJasa.setText(String.valueOf(jasa));
+////           this.TxtJasa.setText(percobaan);
+//
+////           this.TxtTotalBayar.setText(Double.toString(wa1));
+//           this.TxtTotalBayar.setText(String.valueOf(totalangsuran));
+//           this.TxtSisa.setText(String.valueOf(sisa));
+////           this.coba.setText(asdf);
+////            this.TxtAngsuranKe.removeAllItems();
+//            if (qwe == 0) {
+//                qwe = 1;
+//            }else if(qwe == 2){
+//                qwe=2;
+//            }
+//            this.TxtAngsuranKe.setText(Integer.toString(qwe));
+////            this.coba.setText(apk);
+//
+//       
+////           int pk=Integer.parseInt(result.getString("Lama"));
+////           
+////                   for(int i2=1; i2<=pk; i2++)
+////                    {
+////                        this.TxtAngsuranKe.addItem(String.valueOf(i2));
+////                    }
+//                   
+//                          
+//
+//            }catch(SQLException e){
+//            System.out.println(e);        
+//         }
     
-}
+//}
 
 private void TambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TambahActionPerformed
 // TODO add your handling code here:
@@ -794,7 +761,7 @@ private void SimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:
         angsur.angsuran = Integer.parseInt(TxtAngsuran.getText());
         angsur.totalAngsuran = Integer.parseInt(TxtTotalBayar.getText());
         angsur.sisa = Integer.parseInt(TxtSisa.getText()) - angsur.angsuran;
-        angsur.ke = Integer.parseInt(coba.getText());
+        angsur.ke = Integer.parseInt(TxtAngsuranKe.getText());
         try {
             angsur.tambah();
         } catch (Exception e) {
@@ -852,11 +819,7 @@ private void SimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:
     }//GEN-LAST:event_Tabel4MousePressed
 
     private void formInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameActivated
-        // TODO add your handling code here:
-        jTextField1.setVisible(false);
-        jTextField2.setVisible(false);
-        jTextField3.setVisible(false);
-        jTextField4.setVisible(false);
+  
     }//GEN-LAST:event_formInternalFrameActivated
 
     private void pencarianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pencarianActionPerformed
@@ -904,7 +867,7 @@ private void updateangsur()
     java.util.Date tb=(java.util.Date) this.TxtTanggalAngsur.getDate();    
     String kp=(String) this.TxtKodePinjam.getSelectedItem();
     String ja=this.TxtAngsuran.getText();
-    String ke=this.coba.getText();
+    String ke=this.TxtAngsuranKe.getText();
 
 //    String ke=(String) this.TxtAngsuranKe.getSelectedItem();
    // String 
@@ -934,7 +897,7 @@ private void updatesisa()
     java.util.Date tb=(java.util.Date) this.TxtTanggalAngsur.getDate();    
     String kp=(String) this.TxtKodePinjam.getSelectedItem();
     String ja=this.TxtAngsuran.getText();
-    String ke=this.coba.getText();
+    String ke=this.TxtAngsuranKe.getText();
 
 //    String ke=(String) this.TxtAngsuranKe.getSelectedItem();
    // String 
@@ -964,7 +927,7 @@ private void simpan()
     java.util.Date tb=(java.util.Date) this.TxtTanggalAngsur.getDate();    
     String kp=(String) this.TxtKodePinjam.getSelectedItem();
     String ja=this.TxtAngsuran.getText();
-    String ke=this.coba.getText();
+    String ke=this.TxtAngsuranKe.getText();
 //    String ke=(String) this.TxtAngsuranKe.getSelectedItem();
    // String 
    
@@ -995,6 +958,7 @@ private void simpan()
     private javax.swing.JTable Tabel4;
     private javax.swing.JButton Tambah;
     private javax.swing.JTextField TxtAngsuran;
+    private javax.swing.JTextField TxtAngsuranKe;
     private javax.swing.JTextField TxtJasa;
     private javax.swing.JComboBox TxtKodePinjam;
     private javax.swing.JTextField TxtLamaPinjam;
@@ -1005,7 +969,6 @@ private void simpan()
     private com.toedter.calendar.JDateChooser TxtTgl;
     private javax.swing.JTextField TxtTotalBayar;
     private javax.swing.JTextField TxtTotalPinjam;
-    private javax.swing.JTextField coba;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel10;
@@ -1026,10 +989,6 @@ private void simpan()
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField pencarian;
